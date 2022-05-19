@@ -1,0 +1,114 @@
+<div class="w-[100%] h-[100%]">
+  <header class="flex w-[100%] h-[841px]">
+    <div class="w-[50.41%] header-left-background-image">
+      <div class="ml-[18%] mt-[62px]">
+        <img
+          class="w-[19.8%] h-[61.4px] object-contain"
+          src="../../assets/images/logo.png"
+          alt="logo" />
+
+        <p
+          class="w-[76.44%] h-[192px] mt-[246.6px] text-white text-[220%] font-bold header-left-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
+          consequatur rerum!
+        </p>
+
+        <div class="flex items-center mt-[150px]">
+          <p class="w-[27.58%] text-[120%] text-description-header">
+            Look up for more information here:
+          </p>
+
+          <button
+            class="w-[34.7%] h-[72px] ml-[11%] text-[22px] text-white rounded-[8px] font-bold header-left-btn-background-image cursor-pointer">
+            Download PDF
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      [ngStyle]="{
+        'background-image':
+          'url(' + headerImages[activeHeaderImageIndex]['imageSrc'] + ')',
+        'background-blend-mode': 'darken'
+      }"
+      class="w-[49.59%] bg-cover bg-no-repeat bg-[#0000004d]">
+      <div class="header-right-info">
+        <button class="">Learn More</button>
+
+        <div class="icons"></div>
+
+        <div class="relative">
+          <span
+            (click)="showLanguageOptions = !showLanguageOptions"
+            class="text-white font-bold cursor-pointer"
+            >{{ currentLanguage }}</span
+          >
+          <div *ngIf="showLanguageOptions" class="flex flex-col absolute">
+            <span
+              class="font-bold cursor-pointer"
+              [ngClass]="{ 'text-white': currentLanguage === 'Eng' }"
+              (click)="changeCurrentLanguage('Eng')"
+              >Eng</span
+            >
+            <span
+              class="font-bold cursor-pointer"
+              [ngClass]="{ 'text-white': currentLanguage === 'Geo' }"
+              (click)="changeCurrentLanguage('Geo')"
+              >Geo</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="flex w-full h-[80px] mt-[575px] justify-center">
+        <div class="flex w-full justify-around items-center">
+          <span
+            (click)="slideHeaderImages('back')"
+            class="material-symbols-outlined text-white scale-100 cursor-pointer">
+            arrow_back_ios
+          </span>
+          <div *ngFor="let image of headerImages; let i = index">
+            <img
+              (click)="activeHeaderImageIndex = i"
+              [ngClass]="{
+                'border-2 border-[#ffffff4f]': i === activeHeaderImageIndex
+              }"
+              class="w-[149px] h-[80px] rounded-[8px] cursor-pointer"
+              [src]="image.imageSrc"
+              alt="building" />
+          </div>
+          <span
+            (click)="slideHeaderImages('forward')"
+            class="material-symbols-outlined text-white scale-100 cursor-pointer">
+            arrow_forward_ios
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="w-full h-[221px] mt-[26px] bg-black"></div>
+
+  <main class="w-full flex flex-col items-center mt-[145px]">
+    <section class="w-[85.41%] mt-10">
+      <h1 class="font-bold text-[22px]">Aliance Group</h1>
+      <div class="relative w-full">
+        <img
+          (click)="(activeHeaderImageIndex)"
+          class="w-full h-[551px] cursor-pointer rounded-[8px] object-cover"
+          [src]="headerImages[activeHeaderImageIndex].imageSrc"
+          alt="building" />
+
+        <div
+          class="flex justify-between absolute top-[100%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[71%] h-[260px]">
+          <div
+            class="w-[49%] h-[260px] bg-black bg-white blur-[1px] opacity-[.9] shadow-[0_14px_28px_0px_rgba(57,57,57,0.18)]"></div>
+          <div
+            class="w-[49%] h-[260px] bg-black bg-white blur-[1px] opacity-[.9] shadow-[0_14px_28px_0px_rgba(57,57,57,0.18)]"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="w-full h-[500px] mt-[500px]"></footer>
+</div>

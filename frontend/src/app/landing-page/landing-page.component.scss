@@ -1,0 +1,52 @@
+.header-left-background-image {
+  background-image: linear-gradient(
+    135deg,
+    rgb(76, 77, 79) 0%,
+    rgb(5, 8, 14) 100%
+  );
+}
+
+.header-left-btn-background-image {
+  background-image: linear-gradient(
+    180deg,
+    rgb(210, 171, 101) 0%,
+    rgb(139, 98, 23) 72%,
+    rgb(141, 100, 27) 100%
+  );
+}
+
+.header-right-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 76.3px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  button {
+    width: 157.4px;
+    height: 54px;
+
+    backdrop-filter: blur(18px);
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.language {
+  width: 50px;
+  height: 25px;
+
+  font-weight: bold;
+  color: white;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
